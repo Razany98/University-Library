@@ -1,3 +1,5 @@
+package project;
+
 import java.sql.*;
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -41,17 +43,15 @@ public class editTableBook extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
         jTextField2 = new javax.swing.JTextField();
         jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
         jTextField5 = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
-        jLabel7 = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         addComponentListener(new java.awt.event.ComponentAdapter() {
@@ -78,7 +78,7 @@ public class editTableBook extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(jTable1);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 64, 230, 99));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 64, 350, 100));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel2.setText("bookID:");
@@ -92,27 +92,40 @@ public class editTableBook extends javax.swing.JFrame {
         jLabel4.setText("publsher:");
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 140, -1, -1));
 
-        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel5.setText("price:");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 181, -1, -1));
-
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel6.setText("publisherYear:");
         getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 230, -1, -1));
 
         jTextField1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jTextField1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jTextField1KeyPressed(evt);
+            }
+        });
         getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 50, 130, 34));
 
         jTextField2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jTextField2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jTextField2KeyPressed(evt);
+            }
+        });
         getContentPane().add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 100, 130, 32));
 
         jTextField3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jTextField3.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jTextField3KeyPressed(evt);
+            }
+        });
         getContentPane().add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 140, 131, 31));
 
-        jTextField4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        getContentPane().add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 180, 131, 30));
-
         jTextField5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jTextField5.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jTextField5KeyPressed(evt);
+            }
+        });
         getContentPane().add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 220, 134, 32));
 
         jButton1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -142,9 +155,20 @@ public class editTableBook extends javax.swing.JFrame {
         });
         getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 300, -1, -1));
 
-        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/1611590473-550w_365h_bookstacklibraryroomblurredbookshelfbackground.jpg"))); // NOI18N
-        jLabel7.setText("jLabel7");
-        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 550, -1));
+        jPanel1.setBackground(new java.awt.Color(213, 255, 234));
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 650, Short.MAX_VALUE)
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 410, Short.MAX_VALUE)
+        );
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 650, 410));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -171,15 +195,13 @@ public class editTableBook extends javax.swing.JFrame {
         String bookID=jTextField1.getText();
         String name=jTextField2.getText();
         String publisher=jTextField3.getText();
-        String price=jTextField4.getText();
         String publisherYear=jTextField5.getText();
         DefaultTableModel model=(DefaultTableModel)jTable1.getModel();
          int index=jTable1.getSelectedRow();
          model.setValueAt(bookID, index, 0);
          model.setValueAt(name, index, 1);
          model.setValueAt(publisher, index, 2);
-         model.setValueAt(price, index, 3);
-         model.setValueAt(publisherYear, index, 4);
+         model.setValueAt(publisherYear, index, 3);
          JOptionPane.showMessageDialog(null, "Update Successfull");
     }//GEN-LAST:event_jButton2ActionPerformed
 
@@ -201,6 +223,54 @@ public class editTableBook extends javax.swing.JFrame {
         // TODO add your handling code here:
         setVisible(false);
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jTextField1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField1KeyPressed
+        // TODO add your handling code here:
+         char c = evt.getKeyChar(); 
+        if(Character.isLetter(c))
+        {
+            JOptionPane.showMessageDialog(null,"Only numbers are accepted");
+            jTextField1.setEditable(false);
+        }
+        else
+            jTextField1.setEditable(true);
+    }//GEN-LAST:event_jTextField1KeyPressed
+
+    private void jTextField5KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField5KeyPressed
+        // TODO add your handling code here:
+         char c = evt.getKeyChar(); 
+        if(Character.isLetter(c))
+        {
+            JOptionPane.showMessageDialog(null,"Only numbers are accepted");
+            jTextField5.setEditable(false);
+        }
+        else
+            jTextField5.setEditable(true);
+    }//GEN-LAST:event_jTextField5KeyPressed
+
+    private void jTextField2KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField2KeyPressed
+        // TODO add your handling code here:
+        char c = evt.getKeyChar(); 
+        if(Character.isDigit(c))
+        {
+            JOptionPane.showMessageDialog(null,"Only letters are accepted");
+            jTextField2.setEditable(false);
+        }
+        else
+            jTextField2.setEditable(true);
+    }//GEN-LAST:event_jTextField2KeyPressed
+
+    private void jTextField3KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField3KeyPressed
+        // TODO add your handling code here:
+        char c = evt.getKeyChar(); 
+        if(Character.isDigit(c))
+        {
+            JOptionPane.showMessageDialog(null,"Only letters are accepted");
+            jTextField3.setEditable(false);
+        }
+        else
+            jTextField3.setEditable(true);
+    }//GEN-LAST:event_jTextField3KeyPressed
 
     /**
      * @param args the command line arguments
@@ -245,15 +315,13 @@ public class editTableBook extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
     private javax.swing.JTextField jTextField5;
     // End of variables declaration//GEN-END:variables
 }

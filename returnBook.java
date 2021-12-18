@@ -1,3 +1,5 @@
+package project;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -39,12 +41,10 @@ public class returnBook extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
-        jLabel5 = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMaximumSize(new java.awt.Dimension(547, 365));
         setMinimumSize(new java.awt.Dimension(547, 365));
-        setPreferredSize(new java.awt.Dimension(450, 450));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -69,9 +69,19 @@ public class returnBook extends javax.swing.JFrame {
                 jTextField1ActionPerformed(evt);
             }
         });
+        jTextField1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jTextField1KeyPressed(evt);
+            }
+        });
         getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(202, 64, 200, -1));
 
         jTextField2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jTextField2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jTextField2KeyPressed(evt);
+            }
+        });
         getContentPane().add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(202, 115, 200, -1));
 
         jTextField3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -80,9 +90,19 @@ public class returnBook extends javax.swing.JFrame {
                 jTextField3ActionPerformed(evt);
             }
         });
+        jTextField3.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jTextField3KeyPressed(evt);
+            }
+        });
         getContentPane().add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(202, 171, 200, -1));
 
         jTextField4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jTextField4.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jTextField4KeyPressed(evt);
+            }
+        });
         getContentPane().add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(202, 222, 200, -1));
 
         jButton1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -112,10 +132,8 @@ public class returnBook extends javax.swing.JFrame {
         });
         getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(333, 293, -1, -1));
 
-        jLabel5.setBackground(new java.awt.Color(0, 153, 153));
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/1611590473-550w_365h_bookstacklibraryroomblurredbookshelfbackground.jpg"))); // NOI18N
-        jLabel5.setText("jLabel5");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 550, 350));
+        jPanel1.setBackground(new java.awt.Color(195, 255, 225));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 550, 360));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -184,6 +202,54 @@ public class returnBook extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField1ActionPerformed
 
+    private void jTextField1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField1KeyPressed
+        // TODO add your handling code here:
+         char c = evt.getKeyChar(); 
+        if(Character.isLetter(c))
+        {
+            JOptionPane.showMessageDialog(null,"Only numbers are accepted");
+            jTextField1.setEditable(false);
+        }
+        else
+            jTextField1.setEditable(true);
+    }//GEN-LAST:event_jTextField1KeyPressed
+
+    private void jTextField2KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField2KeyPressed
+        // TODO add your handling code here:
+         char c = evt.getKeyChar(); 
+        if(Character.isLetter(c))
+        {
+            JOptionPane.showMessageDialog(null,"Only numbers are accepted");
+            jTextField2.setEditable(false);
+        }
+        else
+            jTextField2.setEditable(true);
+    }//GEN-LAST:event_jTextField2KeyPressed
+
+    private void jTextField4KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField4KeyPressed
+        // TODO add your handling code here:
+         char c = evt.getKeyChar(); 
+        if(Character.isLetter(c))
+        {
+            JOptionPane.showMessageDialog(null,"Only numbers are accepted");
+            jTextField4.setEditable(false);
+        }
+        else
+            jTextField4.setEditable(true);
+    }//GEN-LAST:event_jTextField4KeyPressed
+
+    private void jTextField3KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField3KeyPressed
+        // TODO add your handling code here:
+         char c = evt.getKeyChar(); 
+        if(Character.isLetter(c))
+        {
+            JOptionPane.showMessageDialog(null,"Only numbers are accepted");
+            jTextField3.setEditable(false);
+        }
+        else
+            jTextField3.setEditable(true);
+    }//GEN-LAST:event_jTextField3KeyPressed
+
     /**
      * @param args the command line arguments
      */
@@ -227,7 +293,7 @@ public class returnBook extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;

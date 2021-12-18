@@ -1,9 +1,11 @@
+package project;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package library;
+
 
 import java.awt.Color;
 import static java.awt.Color.blue;
@@ -22,12 +24,13 @@ public class Login extends javax.swing.JFrame {
         initComponents();
         //setExtendedState(JFrame.MAXIMIZED_BOTH);
         
-        setLocation(280,200);
+        setLocation(200,200);
     }
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jButton1 = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -37,23 +40,25 @@ public class Login extends javax.swing.JFrame {
         password = new javax.swing.JPasswordField();
         jLabel5 = new javax.swing.JLabel();
         Login = new javax.swing.JButton();
-        SignUp = new javax.swing.JButton();
         Close = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
+        jLabel7 = new javax.swing.JLabel();
+
+        jButton1.setText("jButton1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel1.setBackground(new java.awt.Color(106, 243, 243));
+        jPanel1.setBackground(new java.awt.Color(204, 204, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Login");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 40, -1, -1));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 40, -1, -1));
 
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Password:");
@@ -71,8 +76,8 @@ public class Login extends javax.swing.JFrame {
         });
         jPanel1.add(username, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 160, 140, 20));
 
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/library/user (4).png"))); // NOI18N
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 140, 40, 60));
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image for project java/user (4)[5545].png"))); // NOI18N
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 140, 40, 50));
 
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Username: ");
@@ -90,29 +95,20 @@ public class Login extends javax.swing.JFrame {
         });
         jPanel1.add(password, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 245, 140, 20));
 
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/library/padlock.png"))); // NOI18N
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image for project java/padlock.png"))); // NOI18N
         jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 230, 50, 40));
 
-        Login.setBackground(new java.awt.Color(0, 153, 153));
+        Login.setBackground(new java.awt.Color(0, 102, 255));
         Login.setText("Login");
         Login.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 LoginActionPerformed(evt);
             }
         });
-        jPanel1.add(Login, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 290, 130, -1));
-
-        SignUp.setBackground(new java.awt.Color(0, 153, 153));
-        SignUp.setText("Sign Up");
-        SignUp.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                SignUpActionPerformed(evt);
-            }
-        });
-        jPanel1.add(SignUp, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 330, 130, -1));
+        jPanel1.add(Login, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 310, 130, -1));
 
         Close.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
-        Close.setForeground(new java.awt.Color(255, 255, 255));
+        Close.setForeground(new java.awt.Color(0, 102, 255));
         Close.setText("X");
         Close.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -123,7 +119,7 @@ public class Login extends javax.swing.JFrame {
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 0, 300, 450));
 
-        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/library/ezgif.com-gif-maker (3).gif"))); // NOI18N
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image for project java/ezgif.com-gif-maker (3).gif"))); // NOI18N
         getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 70, 260, 330));
 
         jPanel2.setBackground(new java.awt.Color(204, 204, 255));
@@ -131,6 +127,9 @@ public class Login extends javax.swing.JFrame {
 
         jPanel3.setBackground(new java.awt.Color(255, 51, 51));
         getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 40, 100, 110));
+
+        jLabel7.setText("jLabel7");
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 180, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -140,31 +139,16 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_CloseMouseClicked
 
     private void LoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LoginActionPerformed
- 
-       /* try{
-           Connection con =  DriverManager.getConnection("jdbc:derby://localhost:1527/Uni-Library","Razan","1234");
-            Statement st = con.createStatement(); 
-            ResultSet rs = st.executeQuery("select * from ADMIN where ADMIN.username='"+username.getText()+"' and ADMIN.password='"+password.getText()+"'");
-            if(rs.next()){
-                JOptionPane.showMessageDialog(this,"Login Success");
-            }else
-                JOptionPane.showMessageDialog(this,"Login Success"); 
-        }catch(Exception e){
-            System.out.print(e); 
-        }*/
-        if(username.getText().equals("Razan")&& password.getText().equals("1234"))
+
+        
+         if(username.getText().equals("razan")&&password.getText().equals("1234")||username.getText().equals("alanoud")&&password.getText().equals("4444"))
         {
-            setVisible(false); 
-            new homePage().setVisible(true);
+            setVisible(false);
+            new home().setVisible(true);
         }
         else
-            JOptionPane.showMessageDialog(null,"Incorrect username or password");
+            JOptionPane.showMessageDialog(null, "Inconnect Username or Password ");
     }//GEN-LAST:event_LoginActionPerformed
-
-    private void SignUpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SignUpActionPerformed
-        new SignUp().setVisible(true);
-        setVisible(false); 
-    }//GEN-LAST:event_SignUpActionPerformed
 
     private void usernameFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_usernameFocusGained
         evt.getComponent().setBackground(Color.blue);
@@ -221,13 +205,14 @@ public class Login extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Close;
     private javax.swing.JButton Login;
-    private javax.swing.JButton SignUp;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;

@@ -1,3 +1,5 @@
+package project;
+
 import java.sql.*;
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -51,7 +53,7 @@ public class editTableStudent extends javax.swing.JFrame {
         jTextField3 = new javax.swing.JTextField();
         jTextField4 = new javax.swing.JTextField();
         jComboBox1 = new javax.swing.JComboBox<>();
-        jLabel7 = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         addComponentListener(new java.awt.event.ComponentAdapter() {
@@ -78,7 +80,7 @@ public class editTableStudent extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(jTable1);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 80, 210, 96));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 80, 300, 100));
 
         jButton1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jButton1.setText("Delete");
@@ -128,6 +130,11 @@ public class editTableStudent extends javax.swing.JFrame {
         getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 260, -1, -1));
 
         jTextField1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jTextField1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jTextField1KeyPressed(evt);
+            }
+        });
         getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 80, 158, 27));
 
         jTextField2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -136,12 +143,22 @@ public class editTableStudent extends javax.swing.JFrame {
                 jTextField2ActionPerformed(evt);
             }
         });
+        jTextField2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jTextField2KeyPressed(evt);
+            }
+        });
         getContentPane().add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 120, 158, 27));
 
         jTextField3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jTextField3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField3ActionPerformed(evt);
+            }
+        });
+        jTextField3.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jTextField3KeyPressed(evt);
             }
         });
         getContentPane().add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 170, 158, 30));
@@ -163,9 +180,8 @@ public class editTableStudent extends javax.swing.JFrame {
         });
         getContentPane().add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 260, 158, -1));
 
-        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/1611590473-550w_365h_bookstacklibraryroomblurredbookshelfbackground.jpg"))); // NOI18N
-        jLabel7.setText("jLabel7");
-        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 550, -1));
+        jPanel1.setBackground(new java.awt.Color(218, 255, 236));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 700, 380));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -240,6 +256,42 @@ public class editTableStudent extends javax.swing.JFrame {
         setVisible(false);
     }//GEN-LAST:event_jButton3ActionPerformed
 
+    private void jTextField1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField1KeyPressed
+        // TODO add your handling code here:
+         char c = evt.getKeyChar(); 
+        if(Character.isLetter(c))
+        {
+            JOptionPane.showMessageDialog(null,"Only numbers are accepted");
+            jTextField1.setEditable(false);
+        }
+        else
+            jTextField1.setEditable(true);
+    }//GEN-LAST:event_jTextField1KeyPressed
+
+    private void jTextField2KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField2KeyPressed
+        // TODO add your handling code here:
+        char c = evt.getKeyChar(); 
+        if(Character.isDigit(c))
+        {
+            JOptionPane.showMessageDialog(null,"Only letters are accepted");
+            jTextField2.setEditable(false);
+        }
+        else
+            jTextField2.setEditable(true);
+    }//GEN-LAST:event_jTextField2KeyPressed
+
+    private void jTextField3KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField3KeyPressed
+        // TODO add your handling code here:
+        char c = evt.getKeyChar(); 
+        if(Character.isDigit(c))
+        {
+            JOptionPane.showMessageDialog(null,"Only letters are accepted");
+            jTextField3.setEditable(false);
+        }
+        else
+            jTextField3.setEditable(true);
+    }//GEN-LAST:event_jTextField3KeyPressed
+
     /**
      * @param args the command line arguments
      */
@@ -286,7 +338,7 @@ public class editTableStudent extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
     private javax.swing.JTextField jTextField1;
